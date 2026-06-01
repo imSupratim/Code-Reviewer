@@ -12,7 +12,7 @@ const app = express();
 // }))
 
 app.use(cors({
-    origin: ["https://code-reviewer-pearl-six.vercel.app/"],
+    origin: ["https://code-reviewer-pearl-six.vercel.app"],
     credentials: true
 }))
 
