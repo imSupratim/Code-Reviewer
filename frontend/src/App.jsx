@@ -32,10 +32,16 @@ const App = () => {
     setLoading(true);
 
     try {
+      // const response = await axios.post(
+      //   "http://localhost:5000/api/ai/get-review",
+      //   { code }
+      // );
+
       const response = await axios.post(
-        "http://localhost:5000/api/ai/get-review",
+        "https://code-reviewer-vubr.onrender.com/api/ai/get-review",
         { code }
       );
+
       setReview(response.data);
       toast.success("Review completed ✅", { id: toastId });
     } catch (error) {
