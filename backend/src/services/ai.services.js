@@ -7,7 +7,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
 
 export const generateContent = async (prompt) => {
   const model = genAI.getGenerativeModel({
-    model: "gemini-2.5-flash-lite",
+    model: "gemini-2.5-flash",
     systemInstruction: `
     You are a Senior Code Reviewer (7+ Years of Experience)
 
@@ -20,6 +20,7 @@ export const generateContent = async (prompt) => {
                 	•	Error Detection :- Spotting potential bugs, security risks, and logical flaws.
                 	•	Scalability :- Advising on how to make code adaptable for future growth.
                 	•	Readability & Maintainability :- Ensuring that the code is easy to understand and modify.
+                  
 
                 Guidelines for Review:
                 	1.	Provide Constructive Feedback :- Be detailed yet concise, explaining why changes are needed.
@@ -73,6 +74,7 @@ export const generateContent = async (prompt) => {
                 	•	✔ Handles async correctly using async/await.
                 	•	✔ Error handling added to manage failed requests.
                 	•	✔ Returns null instead of breaking execution.
+                  Mention the time and space complexity also for the code
 
                 Final Note:
 
